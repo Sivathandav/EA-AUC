@@ -24,20 +24,20 @@
 
 import { createClient } from '@supabase/supabase-js';
 
-// Fall back to dummy values during static build time if env vars are missing
+// Fallback to placeholder strings during Vercel's static build step
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key';
 
 if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
   console.warn(
-    'Missing NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY - copy .env.local.example to .env.local'
+    'Missing NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY - check Vercel Environment Variables'
   );
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   realtime: {
     params: {
-      eventsPerSecond: 20, // auction bidding is bursty - keep the socket responsive
+      eventsPerSecond: 20, 
     },
   },
 });
