@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #0b1120;
+  color: #f4f7fa;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Subtle floodlit-turf diagonal texture used behind the Big Screen stage */
+.arena-turf-bg {
+  background-image: repeating-linear-gradient(
+      135deg,
+      rgba(31, 122, 77, 0.06) 0px,
+      rgba(31, 122, 77, 0.06) 2px,
+      transparent 2px,
+      transparent 42px
+    ),
+    radial-gradient(ellipse at 50% 20%, rgba(245, 166, 35, 0.08), transparent 60%);
+}
+
+/* OBS / projector transparent chroma-key mode */
+.greenscreen {
+  background-color: #00ff00 !important;
+  background-image: none !important;
+}
+.greenscreen .arena-panel {
+  background-color: rgba(0, 30, 0, 0.35) !important;
+  backdrop-filter: none !important;
+}
+
+/* Reusable elevated panel */
+.arena-panel {
+  background-color: #121a2e;
+  border: 1px solid #1e2a45;
+}
+
+/* Hide number input spinners for the PIN pad */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::selection {
+  background: #f5a623;
+  color: #0b1120;
+}

@@ -1,0 +1,7 @@
+{
+  "/page": "app/page.js",
+  "/owner/page": "app/owner/page.js",
+  "/big-screen/page": "app/big-screen/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/manage/page": "app/admin/manage/page.js"
+}
